@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -15,7 +14,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        bgColor: "#1E213F", 
+        bgColor: "#1E213F",
+        darkBlue: "#161932",
+        activeTxtColor: "#1e213f",
+        unactiveTxtColor: "#d7e0ff",
       },
     },
   },
