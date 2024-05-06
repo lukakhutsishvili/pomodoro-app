@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.kumbh-font {
+/* .kumbh-font {
   font-family: "Kumbh Sans", sans-serif;
 }
 
@@ -12,7 +12,7 @@
 
 .space-font {
   font-family: "Space Mono", monospace;
-}
+} */
 
 .bg {
   background-image: linear-gradient(315deg, #2e325a, #0e112a);
