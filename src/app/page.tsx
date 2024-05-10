@@ -19,6 +19,9 @@ interface HomeType {
 
 export default function Home() {
   const [modal, setModal] = useState<boolean>(true);
+  const [pomodoro, setPomodoro] = useState<number>(25);
+  const [shortBreak, setShortBreak] = useState(5);
+  const [longBreak, setlongBreak] = useState(5);
 
   return (
     <main className={`px-6 kumbh-font grid relative ${kumbhSans.className}`}>
@@ -34,7 +37,16 @@ export default function Home() {
         className="justify-self-center mt-[79px] cursor-pointer"
         src="/assets/icon-settings.svg"
       />
-      <Modal modal={modal} setModal={setModal} />
+      <Modal
+        modal={modal}
+        setModal={setModal}
+        pomodoro={pomodoro}
+        setPomodoro={setPomodoro}
+        shortBreak={shortBreak}
+        setShortBreak={setShortBreak}
+        longBreak={longBreak}
+        setLongtBreak={setlongBreak}
+      />
     </main>
   );
 }

@@ -22,6 +22,7 @@ const config: Config = {
         pink: "#d881f8",
         pomodoro: " #f87070",
         gray: "#e3e1e1",
+        timerBgColor: "#eff1fa",
       },
     },
   },

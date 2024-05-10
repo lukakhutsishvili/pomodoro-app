@@ -2,19 +2,22 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* .kumbh-font {
-  font-family: "Kumbh Sans", sans-serif;
-}
-
-.roboto-font {
-  font-family: "Roboto Slab", serif;
-}
-
-.space-font {
-  font-family: "Space Mono", monospace;
-} */
-
 .bg {
   background-image: linear-gradient(315deg, #2e325a, #0e112a);
 }
 
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animateClick {
+  animation: clickEffect 0.3s ease;
+}
