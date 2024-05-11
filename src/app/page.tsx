@@ -12,9 +12,9 @@ import {
 import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
 import Modal from "./pages/modal";
 
-const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
-const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
-const spaceMono = Space_Mono({
+export const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
+export const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
+export const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: "700",
 });
@@ -25,11 +25,15 @@ interface HomeType {
 interface contextType {
   font: String;
   setFont: React.Dispatch<string>;
+  color: String;
+  setColor: React.Dispatch<string>;
 }
 
 const context = createContext<contextType>({
   font: "khumbrSans",
   setFont: () => {},
+  color: "pomodoro",
+  setColor: () => {},
 });
 
 export default function Home() {
@@ -38,21 +42,12 @@ export default function Home() {
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setlongBreak] = useState(5);
   const [font, setFont] = useState("khumbrSans");
+  const [color, setColor] = useState("pomodoro");
 
   console.log(pomodoro);
   return (
-    <context.Provider value={{ font, setFont }}>
-      <main
-        className={`px-6 kumbh-font grid relative ${
-          font === "khumbrSans"
-            ? kumbhSans.className
-            : font === "robotoSlab"
-            ? robotoSlab.className
-            : font === "spaceMono"
-            ? spaceMono.className
-            : ""
-        }`}
-      >
+    <context.Provider value={{ font, setFont, color, setColor }}>
+      <main className={`px-6 kumbh-font grid relative  `}>
         <div className="mt-8 flex justify-center">
           <img src="/assets/logo.svg" alt="Logo" />
         </div>

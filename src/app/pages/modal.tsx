@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { DecreaseTime, EncreaseTime } from "../images/svgs";
 import Fonts from "../components/Fonts";
 import Colors from "../components/Colors";
+import { FontContext, kumbhSans, robotoSlab, spaceMono } from "../page";
+
+const { font } = FontContext();
 
 const Modal: React.FC<{
   modal: boolean;
@@ -32,8 +35,6 @@ const Modal: React.FC<{
   const [animatelongBreakUp, setAnimatelongBreakUp] = useState(false);
   const [animatelongBreakDown, setAnimatelongBreakDown] = useState(false);
 
-  const [color, setColor] = useState("");
-
   const handleIncrease = (
     value: number,
     setter: React.Dispatch<React.SetStateAction<number>>,
@@ -55,8 +56,21 @@ const Modal: React.FC<{
   };
 
   return (
-    <div className={modal ? " w-full min-h-full flex px-6 absolute" : "hidden"}>
-      <div className="bg-white mt-11 px-6 pt-6 w-full h-fit relative rounded-[15px]">
+    <div
+      className={`
+        ${
+          modal ? " w-full min-h-full flex px-6  absolute pb-[72px]" : "hidden"
+        } ${
+        font === "khumbrSans"
+          ? kumbhSans.className
+          : font === "robotoSlab"
+          ? robotoSlab.className
+          : font === "spaceMono"
+          ? spaceMono.className
+          : ""
+      } `}
+    >
+      <div className="bg-white mt-11 px-6 pt-6 w-full h-fit relative rounded-[15px] pb-[59px] ">
         <div className="flex justify-between">
           <h1 className="font-bold text-[20px]">Settings</h1>
           <img
@@ -161,7 +175,9 @@ const Modal: React.FC<{
           <Fonts />
           <div className=" h-[1px] w-full bg-gray mt-6 "></div>
           <Colors />
-          <button className="">Apply</button>
+          <button className=" bottom-[-26.5px] w-[140px] h-[53px] absolute rounded-[26.5px] text-[16px] bg-pomodoro text-white left-[50%] translate-x-[-50%]">
+            Apply
+          </button>
         </div>
       </div>
     </div>
