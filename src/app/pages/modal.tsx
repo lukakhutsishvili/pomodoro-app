@@ -1,4 +1,8 @@
+import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
 import React, { useState } from "react";
+import { DecreaseTime, EncreaseTime } from "../images/svgs";
+import Fonts from "../components/Fonts";
+import Colors from "../components/Colors";
 
 const Modal: React.FC<{
   modal: boolean;
@@ -27,6 +31,8 @@ const Modal: React.FC<{
 
   const [animatelongBreakUp, setAnimatelongBreakUp] = useState(false);
   const [animatelongBreakDown, setAnimatelongBreakDown] = useState(false);
+
+  const [color, setColor] = useState("");
 
   const handleIncrease = (
     value: number,
@@ -72,9 +78,8 @@ const Modal: React.FC<{
                   onClick={() =>
                     handleIncrease(pomodoro, setPomodoro, setAnimatePomodoroUp)
                   }
-                  className={animatePomodoroUp ? "animateClick" : ""}
                 >
-                  <img src="/assets/icon-arrow-up.svg" alt="Increase" />
+                  <EncreaseTime animateUp={animatePomodoroUp} />
                 </div>
                 <div
                   onClick={() =>
@@ -84,9 +89,8 @@ const Modal: React.FC<{
                       setAnimatePomodoroDown
                     )
                   }
-                  className={animatePomodoroDown ? "animateClick" : ""}
                 >
-                  <img src="/assets/icon-arrow-down.svg" alt="Decrease" />
+                  <DecreaseTime animateDown={animatePomodoroDown} />
                 </div>
               </div>
             </div>
@@ -105,9 +109,8 @@ const Modal: React.FC<{
                       setAnimateshortBreakUp
                     )
                   }
-                  className={animateshortBreakUp ? "animateClick" : ""}
                 >
-                  <img src="/assets/icon-arrow-up.svg" alt="Increase" />
+                  <EncreaseTime animateUp={animateshortBreakUp} />
                 </div>
                 <div
                   onClick={() =>
@@ -117,9 +120,8 @@ const Modal: React.FC<{
                       setAnimateshortBreakDown
                     )
                   }
-                  className={animateshortBreakDown ? "animateClick" : ""}
                 >
-                  <img src="/assets/icon-arrow-down.svg" alt="Decrease" />
+                  <DecreaseTime animateDown={animateshortBreakDown} />
                 </div>
               </div>
             </div>
@@ -138,9 +140,8 @@ const Modal: React.FC<{
                       setAnimatelongBreakUp
                     )
                   }
-                  className={animatelongBreakUp ? "animateClick" : ""}
                 >
-                  <img src="/assets/icon-arrow-up.svg" alt="Increase" />
+                  <EncreaseTime animateUp={animatelongBreakUp} />
                 </div>
                 <div
                   onClick={() =>
@@ -150,13 +151,17 @@ const Modal: React.FC<{
                       setAnimatelongBreakDown
                     )
                   }
-                  className={animatelongBreakDown ? "animateClick" : ""}
                 >
-                  <img src="/assets/icon-arrow-down.svg" alt="Decrease" />
+                  <DecreaseTime animateDown={animatelongBreakDown} />
                 </div>
               </div>
             </div>
           </div>
+          <div className=" h-[1px] w-full bg-gray mt-[49px]"></div>
+          <Fonts />
+          <div className=" h-[1px] w-full bg-gray mt-6 "></div>
+          <Colors />
+          <button className="">Apply</button>
         </div>
       </div>
     </div>
