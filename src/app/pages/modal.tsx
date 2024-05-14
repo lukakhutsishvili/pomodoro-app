@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import { DecreaseTime, EncreaseTime } from "../images/svgs";
 import Fonts from "../components/Fonts";
 import Colors from "../components/Colors";
-import { FontContext, kumbhSans, robotoSlab, spaceMono } from "../page";
-
-const { font } = FontContext();
+import { allContext, kumbhSans, robotoSlab, spaceMono } from "../page";
 
 const Modal: React.FC<{
   modal: boolean;
@@ -34,6 +32,8 @@ const Modal: React.FC<{
 
   const [animatelongBreakUp, setAnimatelongBreakUp] = useState(false);
   const [animatelongBreakDown, setAnimatelongBreakDown] = useState(false);
+
+  const { font, setAllInfo, color } = allContext();
 
   const handleIncrease = (
     value: number,
@@ -175,7 +175,28 @@ const Modal: React.FC<{
           <Fonts />
           <div className=" h-[1px] w-full bg-gray mt-6 "></div>
           <Colors />
-          <button className=" bottom-[-26.5px] w-[140px] h-[53px] absolute rounded-[26.5px] text-[16px] bg-pomodoro text-white left-[50%] translate-x-[-50%]">
+          <button
+            onClick={() => {
+              setAllInfo({
+                pomodoro,
+                shortBreak,
+                longBreak,
+                font,
+                color,
+              });
+              setModal(false);
+            }}
+            className={`${
+              color === "pomodoro"
+                ? "bg-pomodoro"
+                : color === "lightBlue"
+                ? "bg-lightBlue"
+                : color === "pink"
+                ? "bg-pink"
+                : ""
+            } 
+            bottom-[-26.5px] w-[140px] h-[53px] absolute rounded-[26.5px] text-[16px]  text-white left-[50%] translate-x-[-50%]`}
+          >
             Apply
           </button>
         </div>

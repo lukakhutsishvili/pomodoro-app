@@ -1,16 +1,10 @@
 "use client";
-
-import Image from "next/image";
 import Header from "./components/header";
-import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { createContext, useContext, useState } from "react";
 import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
 import Modal from "./pages/modal";
+import Timer from "./components/timer";
+import { AllInfoType, contextType } from "./types";
 
 export const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
 export const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
@@ -19,42 +13,71 @@ export const spaceMono = Space_Mono({
   weight: "700",
 });
 
-interface HomeType {
-  kumbhSans: string;
-}
-interface contextType {
-  font: String;
-  setFont: React.Dispatch<string>;
-  color: String;
-  setColor: React.Dispatch<string>;
-}
+
 
 const context = createContext<contextType>({
   font: "khumbrSans",
   setFont: () => {},
   color: "pomodoro",
   setColor: () => {},
+  name: "pomodoro",
+  setName: () => {},
+  allInfo: {
+    pomodoro: 25,
+    shortBreak: 5,
+    longBreak: 5,
+    font: "khumbrSans",
+    color: "pomodoro",
+  },
+  setAllInfo: () => {},
 });
 
 export default function Home() {
-  const [modal, setModal] = useState<boolean>(true);
+  const [name, setName] = useState("pomodoro");
+  const [modal, setModal] = useState<boolean>(false);
   const [pomodoro, setPomodoro] = useState<number>(25);
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setlongBreak] = useState(5);
   const [font, setFont] = useState("khumbrSans");
   const [color, setColor] = useState("pomodoro");
 
-  console.log(pomodoro);
+  const [allInfo, setAllInfo] = useState<AllInfoType>({
+    pomodoro,
+    shortBreak,
+    longBreak,
+    font,
+    color,
+  });
+
   return (
-    <context.Provider value={{ font, setFont, color, setColor }}>
-      <main className={`px-6 kumbh-font grid relative  `}>
+    <context.Provider
+      value={{
+        font,
+        setFont,
+        color,
+        setColor,
+        name,
+        setName,
+        allInfo,
+        setAllInfo,
+      }}
+    >
+      <main
+        className={`px-6 kumbh-font grid relative  ${
+          allInfo.font === "khumbrSans"
+            ? kumbhSans.className
+            : allInfo.font === "robotoSlab"
+            ? robotoSlab.className
+            : allInfo.font === "spaceMono"
+            ? spaceMono.className
+            : ""
+        } `}
+      >
         <div className="mt-8 flex justify-center">
           <img src="/assets/logo.svg" alt="Logo" />
         </div>
         <Header />
-        <div className="w-[300px] h-[300px] rounded-[50%] bg justify-self-center mt-12 p-4 ">
-          <div className="p-[10px] bg-darkBlue h-full rounded-[50%]"></div>
-        </div>
+        <Timer />
         <img
           onClick={() => setModal(true)}
           className="justify-self-center mt-[79px] cursor-pointer"
@@ -75,6 +98,6 @@ export default function Home() {
   );
 }
 
-export function FontContext() {
+export function allContext() {
   return useContext(context);
 }

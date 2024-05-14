@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { allContext } from "../page";
 
 const Header = () => {
-  const [name, setName] = useState("pomodoro");
-  const bgColor = " #f87070";
+  const { name, setName, allInfo } = allContext();
+   const bgColor =
+    allInfo.color === "pomodoro"
+      ? "#f87070"
+      : allInfo.color === "lightBlue"
+      ? "#70f3f8"
+      : allInfo.color === "lightBlue"
+      ? "#d881f8"
+      : "";
 
   return (
     <div className="mt-[45px] h-[63px] p-2 flex justify-between rounded-[31px] bg-darkBlue">
