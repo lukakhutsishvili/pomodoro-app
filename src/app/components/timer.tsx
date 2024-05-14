@@ -53,8 +53,7 @@ const Timer = () => {
       ? "#d881f8"
       : "";
 
-  const car = 1 + 4;
-  const sum = car + 5;
+
 
   // useEffect(() => {
   //   setMinutes(mode);
