@@ -13,8 +13,6 @@ export const spaceMono = Space_Mono({
   weight: "700",
 });
 
-
-
 const context = createContext<contextType>({
   font: "khumbrSans",
   setFont: () => {},
@@ -30,6 +28,7 @@ const context = createContext<contextType>({
     color: "pomodoro",
   },
   setAllInfo: () => {},
+
 });
 
 export default function Home() {

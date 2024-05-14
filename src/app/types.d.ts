@@ -14,4 +14,5 @@ export interface contextType {
   setName: React.Dispatch<string>;
   allInfo: AllInfoType;
   setAllInfo: React.Dispatch<AllInfoType>;
+
 }
