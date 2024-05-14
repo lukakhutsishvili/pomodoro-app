@@ -25,7 +25,7 @@ const Timer = () => {
     shortBreak: 0,
     longBreak: 0,
   });
-  const [minutes, setMinutes] = useState<{[key: string] : number}>({
+  const [minutes, setMinutes] = useState<{ [key: string]: number }>({
     pomodoro: allInfo.pomodoro,
     shortBreak: allInfo.shortBreak,
     longBreak: allInfo.longBreak,
@@ -52,6 +52,9 @@ const Timer = () => {
       : allInfo.color === "lightBlue"
       ? "#d881f8"
       : "";
+
+  const car = 1 + 4;
+  const sum = car + 5;
 
   // useEffect(() => {
   //   setMinutes(mode);
