@@ -24,7 +24,7 @@ const Timer = () => {
       : "";
 
   const [pause, setPause] = useState({
-    pomodoro: false,
+    pomodoro: true,
     shortBreak: true,
     longBreak: true,
   });
@@ -71,49 +71,80 @@ const Timer = () => {
   }, [allInfo]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-
-      if (minutes[currentMode] === 0 && seconds[currentMode] === 0) {
-
-        clearInterval(timer);
-      } else if (seconds[currentMode] > 0) {
-        setSeconds((prev) => ({
-          ...prev,
-          [currentMode]: prev[currentMode] - 1,
-        }));
-      } else if (minutes[currentMode] > 0 && seconds[currentMode] === 0) {
-        setSeconds((prev) => ({ ...prev, [currentMode]: 59 }));
-        setMinutes((prev) => ({
-          ...prev,
-          [currentMode]: prev[currentMode] - 1,
-        }));
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [minutes, seconds]);
+    if (!pause[currentMode]) {
+      const timer = setInterval(() => {
+        if (minutes[currentMode] === 0 && seconds[currentMode] === 0) {
+          clearInterval(timer);
+        } else if (seconds[currentMode] > 0) {
+          setSeconds((prev) => ({
+            ...prev,
+            [currentMode]: prev[currentMode] - 1,
+          }));
+        } else if (minutes[currentMode] > 0 && seconds[currentMode] === 0) {
+          setSeconds((prev) => ({ ...prev, [currentMode]: 59 }));
+          setMinutes((prev) => ({
+            ...prev,
+            [currentMode]: prev[currentMode] - 1,
+          }));
+        }
+      }, 10);
+      return () => clearInterval(timer);
+    }
+  }, [minutes, seconds, pause]);
 
   const totalSeconds = allInfo[currentMode] * 60;
   const remainingSeconds = minutes[currentMode] * 60 + seconds[currentMode];
   const percentage = ((totalSeconds - remainingSeconds) / totalSeconds) * 100;
 
   return (
-    <div className="w-[300px] h-[300px] rounded-[50%] bg justify-self-center mt-12 p-4 ">
+    <div className="w-[300px] h-[300px] rounded-[50%] bg justify-self-center mt-12 p-4 box shadow-xl">
       <div className="p-[10px] bg-darkBlue h-full rounded-[50%]">
         <CircularProgressbar
           value={100 - percentage}
           text={`${formattedTime(minutes[currentMode])}:${formattedTime(
             seconds[currentMode]
           )} `}
-          styles={buildStyles({
-            pathColor: bgColor,
-            strokeLinecap: "round",
-            textColor: "#d7e0ff",
-            textSize: "16px",
-            trailColor: "transparent",
-          })}
+          styles={{
+            // Customize the root svg element
+            root: {},
+            // Customize the path, i.e. the "completed progress"
+            path: {
+              // Path color
+              stroke: bgColor,
+              // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+              strokeLinecap: "round",
+              // Customize transition animation
+              transition: "stroke-dashoffset 0.5s ease 0s",
+              // Rotate the path
+              transform: "",
+              transformOrigin: "center center",
+
+              strokeWidth: "5px",
+            },
+            // Customize the circle behind the path, i.e. the "total progress"
+            trail: {
+              display: "none",
+            },
+            // Customize the text
+            text: {
+              // Text color
+              fill: "#d7e0ff",
+              // Text size
+              fontSize: "16px",
+            },
+            // Customize background - only used when the `background` prop is true
+            background: {
+              fill: "#3e98c7",
+            },
+          }}
         />
       </div>
+      <h1
+        onClick={() => setPause((prev) => ({ ...prev, [currentMode]: false }))}
+        className="text-white cursor-pointer"
+      >
+        start
+      </h1>
     </div>
   );
 };

@@ -24,6 +24,9 @@ const config: Config = {
         gray: "#e3e1e1",
         timerBgColor: "#eff1fa",
       },
+      boxShadow: {
+        xl: " 50px 50px 100px 0 #121530, -50px -50px 100px 0 #272c5a",
+      },
     },
   },
   plugins: [],
