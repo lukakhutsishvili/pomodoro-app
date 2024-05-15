@@ -4,12 +4,12 @@ import { allContext } from "../page";
 
 const Header = () => {
   const { name, setName, allInfo } = allContext();
-   const bgColor =
+  const bgColor =
     allInfo.color === "pomodoro"
       ? "#f87070"
       : allInfo.color === "lightBlue"
       ? "#70f3f8"
-      : allInfo.color === "lightBlue"
+      : allInfo.color === "pink"
       ? "#d881f8"
       : "";
 
