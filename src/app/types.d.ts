@@ -1,11 +1,11 @@
-export interface AllInfoType {
+ interface AllInfoType {
   pomodoro: number;
   shortBreak: number;
   longBreak: number;
   font: string;
   color: string;
 }
-export interface contextType {
+ interface contextType {
   font: string;
   setFont: React.Dispatch<string>;
   color: string;

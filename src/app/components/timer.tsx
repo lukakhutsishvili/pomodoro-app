@@ -14,6 +14,8 @@ type TimerMode = "pomodoro" | "shortBreak" | "longBreak";
 const Timer = () => {
   const { allInfo, name } = allContext();
 
+  const [startTimer, setStartTimer] = useState("Start");
+
   const bgColor =
     allInfo.color === "pomodoro"
       ? "#f87070"
@@ -57,24 +59,50 @@ const Timer = () => {
 
   const currentMode = getMode(name);
 
+  const resetTimer = (mode: TimerMode) => {
+    setMinutes((prev) => ({
+      ...prev,
+      [mode]: allInfo[mode],
+    }));
+    setSeconds((prev) => ({
+      ...prev,
+      [mode]: 0,
+    }));
+  };
+
+  const handleTimer = () => {
+    if (startTimer === "Start") {
+      setStartTimer("Pause");
+      setPause((prev) => ({ ...prev, [currentMode]: false }));
+    } else if (startTimer === "Pause") {
+      setStartTimer("Start");
+      setPause((prev) => ({ ...prev, [currentMode]: true }));
+    } else if (startTimer === "Restart") {
+      resetTimer(currentMode);
+      setStartTimer("Start"); // Change "start" to "Start"
+      setPause((prev) => ({ ...prev, [currentMode]: true })); // Set pause to false to start the timer again
+    }
+  };
+
   useEffect(() => {
-    setMinutes({
-      pomodoro: allInfo.pomodoro,
-      shortBreak: allInfo.shortBreak,
-      longBreak: allInfo.longBreak,
-    });
-    setSeconds({
-      pomodoro: 0,
-      shortBreak: 0,
-      longBreak: 0,
-    });
-  }, [allInfo]);
+    return () => {
+      setStartTimer("Start");
+      setPause((prev) => ({
+        ...prev,
+        [currentMode]: true,
+      }));
+    };
+  }, [name, currentMode]);
+
+  console.log(pause);
 
   useEffect(() => {
     if (!pause[currentMode]) {
       const timer = setInterval(() => {
         if (minutes[currentMode] === 0 && seconds[currentMode] === 0) {
           clearInterval(timer);
+          setStartTimer("Restart");
+          setPause((prev) => ({ ...prev, [currentMode]: true }));
         } else if (seconds[currentMode] > 0) {
           setSeconds((prev) => ({
             ...prev,
@@ -87,8 +115,10 @@ const Timer = () => {
             [currentMode]: prev[currentMode] - 1,
           }));
         }
-      }, 10);
-      return () => clearInterval(timer);
+      }, 1000);
+      return () => {
+        clearInterval(timer);
+      };
     }
   }, [minutes, seconds, pause]);
 
@@ -139,11 +169,8 @@ const Timer = () => {
           }}
         />
       </div>
-      <h1
-        onClick={() => setPause((prev) => ({ ...prev, [currentMode]: false }))}
-        className="text-white cursor-pointer"
-      >
-        start
+      <h1 onClick={handleTimer} className="text-white cursor-pointer font-bold">
+        {startTimer}
       </h1>
     </div>
   );
