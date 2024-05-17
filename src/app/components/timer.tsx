@@ -94,7 +94,18 @@ const Timer = () => {
     };
   }, [name, currentMode]);
 
-  console.log(pause);
+  useEffect(() => {
+    setMinutes({
+      pomodoro: allInfo.pomodoro,
+      shortBreak: allInfo.shortBreak,
+      longBreak: allInfo.longBreak,
+    });
+    setSeconds({
+      pomodoro: 0,
+      shortBreak: 0,
+      longBreak: 0,
+    });
+  }, [allInfo]);
 
   useEffect(() => {
     if (!pause[currentMode]) {
