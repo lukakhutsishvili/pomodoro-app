@@ -4,7 +4,6 @@ import { createContext, useContext, useState } from "react";
 import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
 import Modal from "./pages/modal";
 import Timer from "./components/timer";
-import { AllInfoType, contextType } from "./types";
 
 export const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
 export const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });

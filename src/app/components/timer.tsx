@@ -171,7 +171,8 @@ const Timer = () => {
               // Text color
               fill: "#d7e0ff",
               // Text size
-              fontSize: "16px",
+              fontSize: "30px",
+              letterSpacing: "0px",
             },
             // Customize background - only used when the `background` prop is true
             background: {
@@ -182,7 +183,15 @@ const Timer = () => {
       </div>
       <h1
         onClick={handleTimer}
-        className="text-white cursor-pointer font-bold absolute left-[125px] bottom-[113px]"
+        className={`text-white ${
+          allInfo.color === "pomodoro"
+            ? "hover:text-[#f87070]"
+            : allInfo.color === "lightBlue"
+            ? "hover:text-[#70f3f8]"
+            : allInfo.color === "pink"
+            ? "hover:text-[#d881f8]"
+            : ""
+        } cursor-pointer font-bold absolute left-[50%] translate-x-[-50%] bottom-[78px] tracking-[13.13px]`}
       >
         {startTimer}
       </h1>
