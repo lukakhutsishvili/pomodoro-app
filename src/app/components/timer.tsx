@@ -138,7 +138,7 @@ const Timer = () => {
   const percentage = ((totalSeconds - remainingSeconds) / totalSeconds) * 100;
 
   return (
-    <div className="md:w-[410px] md:p-[22px] md:h-[410px] w-[300px] h-[300px] rounded-[50%] bg justify-self-center mt-12 p-4 box shadow-xl relative">
+    <div className="md:mt-[109px] md:w-[410px] md:p-[22px] md:h-[410px] w-[300px] h-[300px] rounded-[50%] bg justify-self-center mt-12 p-4 box shadow-xl relative">
       <div className="md:p-[13.5px] p-[10px] bg-darkBlue h-full rounded-[50%]">
         <CircularProgressbar
           value={100 - percentage}

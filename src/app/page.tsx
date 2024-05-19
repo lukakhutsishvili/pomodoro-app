@@ -61,7 +61,7 @@ export default function Home() {
       }}
     >
       <main
-        className={`md:px-[0px] px-6 kumbh-font grid relative  ${
+        className={`md:pb-[112px] md:px-[0px] px-6 kumbh-font grid relative  ${
           allInfo.font === "khumbrSans"
             ? kumbhSans.className
             : allInfo.font === "robotoSlab"

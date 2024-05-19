@@ -59,7 +59,9 @@ const Modal: React.FC<{
     <div
       className={`
         ${
-          modal ? " w-full min-h-full flex px-6  absolute pb-[72px]" : "hidden"
+          modal
+            ? "md:px-[114px] md:pt-[267px] w-full min-h-full flex px-6  absolute pb-[72px]"
+            : "hidden"
         } ${
         font === "khumbrSans"
           ? kumbhSans.className
@@ -70,7 +72,7 @@ const Modal: React.FC<{
           : ""
       } `}
     >
-      <div className="bg-white mt-11 px-6 pt-6 w-full h-fit relative rounded-[15px] pb-[59px] ">
+      <div className="md:px-[39px] md:pt-[34px] bg-white mt-11 px-6 pt-6 w-full h-fit relative rounded-[15px] pb-[59px] ">
         <div className="flex justify-between">
           <h1 className="font-bold text-[20px]">Settings</h1>
           <img
@@ -80,7 +82,7 @@ const Modal: React.FC<{
             alt="Close"
           />
         </div>
-        <div className="absolute h-[1px] w-full bg-gray top-[72px] left-0"></div>
+        <div className="md:top-[93px] absolute h-[1px] w-full bg-gray top-[72px] left-0"></div>
         <h2 className="mt-[53px] text-center">Time (Minutes)</h2>
         <div className="mt-[18px] flex flex-col gap-2">
           <div className="flex justify-between items-center">
