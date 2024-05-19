@@ -138,8 +138,8 @@ const Timer = () => {
   const percentage = ((totalSeconds - remainingSeconds) / totalSeconds) * 100;
 
   return (
-    <div className="w-[300px] h-[300px] rounded-[50%] bg justify-self-center mt-12 p-4 box shadow-xl relative">
-      <div className="p-[10px] bg-darkBlue h-full rounded-[50%]">
+    <div className="md:w-[410px] md:p-[22px] md:h-[410px] w-[300px] h-[300px] rounded-[50%] bg justify-self-center mt-12 p-4 box shadow-xl relative">
+      <div className="md:p-[13.5px] p-[10px] bg-darkBlue h-full rounded-[50%]">
         <CircularProgressbar
           value={100 - percentage}
           text={`${formattedTime(minutes[currentMode])}:${formattedTime(
@@ -191,7 +191,7 @@ const Timer = () => {
             : allInfo.color === "pink"
             ? "hover:text-[#d881f8]"
             : ""
-        } cursor-pointer font-bold absolute left-[50%] translate-x-[-50%] bottom-[78px] tracking-[13.13px]`}
+        } md:text-[16px] cursor-pointer font-bold absolute left-[50%] translate-x-[-50%] md:bottom-[108px] bottom-[78px] tracking-[13.13px]`}
       >
         {startTimer}
       </h1>

@@ -14,10 +14,10 @@ const Header = () => {
       : "";
 
   return (
-    <div className="mt-[45px] h-[63px] p-2 flex justify-between rounded-[31px] bg-darkBlue">
+    <div className="md:mx-[198px] md:mt-[55px] mt-[45px] h-[63px] p-2 flex justify-between rounded-[31px] bg-darkBlue">
       <div
         onClick={() => setName("pomodoro")}
-        className={`px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
+        className={`md:px-[28px] px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
           name !== "pomodoro" ? "hover:text-[white] " : ""
         }`}
         style={{
@@ -28,7 +28,7 @@ const Header = () => {
       </div>
       <div
         onClick={() => setName("short break")}
-        className={`px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
+        className={`md:px-[28px] px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
           name !== "short break" ? "hover:text-[white] " : ""
         }`}
         style={{
@@ -39,7 +39,7 @@ const Header = () => {
       </div>
       <div
         onClick={() => setName("long break")}
-        className={`px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
+        className={`md:px-[28px] px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
           name !== "long break" ? "hover:text-[white] " : ""
         }`}
         style={{

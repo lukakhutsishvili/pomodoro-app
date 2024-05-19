@@ -75,7 +75,7 @@ const Modal: React.FC<{
           <h1 className="font-bold text-[20px]">Settings</h1>
           <img
             onClick={() => setModal(false)}
-            className="h-3"
+            className="h-3 cursor-pointer"
             src="/assets/icon-close.svg"
             alt="Close"
           />
