@@ -83,92 +83,99 @@ const Modal: React.FC<{
           />
         </div>
         <div className="md:top-[93px] absolute h-[1px] w-full bg-gray top-[72px] left-0"></div>
-        <h2 className="mt-[53px] text-center">Time (Minutes)</h2>
-        <div className="mt-[18px] flex flex-col gap-2">
-          <div className="flex justify-between items-center">
-            <p className="text-darkBlue opacity-[0.4]">Pomodoro</p>
-            <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
-              <p>{pomodoro}</p>
-              <div className="flex flex-col gap-[9px]">
-                <div
-                  onClick={() =>
-                    handleIncrease(pomodoro, setPomodoro, setAnimatePomodoroUp)
-                  }
-                >
-                  <EncreaseTime animateUp={animatePomodoroUp} />
-                </div>
-                <div
-                  onClick={() =>
-                    handleDecrease(
-                      pomodoro,
-                      setPomodoro,
-                      setAnimatePomodoroDown
-                    )
-                  }
-                >
-                  <DecreaseTime animateDown={animatePomodoroDown} />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/*  short Break */}
-          <div className="flex justify-between items-center">
-            <p className="text-darkBlue opacity-[0.4]">short Break</p>
-            <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
-              <p>{shortBreak}</p>
-              <div className="flex flex-col gap-[9px]">
-                <div
-                  onClick={() =>
-                    handleIncrease(
-                      shortBreak,
-                      setShortBreak,
-                      setAnimateshortBreakUp
-                    )
-                  }
-                >
-                  <EncreaseTime animateUp={animateshortBreakUp} />
-                </div>
-                <div
-                  onClick={() =>
-                    handleDecrease(
-                      shortBreak,
-                      setShortBreak,
-                      setAnimateshortBreakDown
-                    )
-                  }
-                >
-                  <DecreaseTime animateDown={animateshortBreakDown} />
+        <h2 className="md:text-left mt-[53px] text-center">Time (Minutes)</h2>
+        <div className=" mt-[18px] flex flex-col gap-2">
+          <div className="md:flex gap-5">
+            {/* pomodoro */}
+            <div className=" md:flex-col flex justify-between items-center">
+              <p className="text-darkBlue opacity-[0.4]">Pomodoro</p>
+              <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
+                <p>{pomodoro}</p>
+                <div className="flex flex-col gap-[9px]">
+                  <div
+                    onClick={() =>
+                      handleIncrease(
+                        pomodoro,
+                        setPomodoro,
+                        setAnimatePomodoroUp
+                      )
+                    }
+                  >
+                    <EncreaseTime animateUp={animatePomodoroUp} />
+                  </div>
+                  <div
+                    onClick={() =>
+                      handleDecrease(
+                        pomodoro,
+                        setPomodoro,
+                        setAnimatePomodoroDown
+                      )
+                    }
+                  >
+                    <DecreaseTime animateDown={animatePomodoroDown} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          {/* long break  */}
-          <div className="flex justify-between items-center">
-            <p className="text-darkBlue opacity-[0.4]">long break </p>
-            <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
-              <p>{longBreak}</p>
-              <div className="flex flex-col gap-[9px]">
-                <div
-                  onClick={() =>
-                    handleIncrease(
-                      longBreak,
-                      setLongtBreak,
-                      setAnimatelongBreakUp
-                    )
-                  }
-                >
-                  <EncreaseTime animateUp={animatelongBreakUp} />
+            {/*  short Break */}
+            <div className="md:flex-col  flex justify-between items-center">
+              <p className="text-darkBlue opacity-[0.4]">short Break</p>
+              <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
+                <p>{shortBreak}</p>
+                <div className="flex flex-col gap-[9px]">
+                  <div
+                    onClick={() =>
+                      handleIncrease(
+                        shortBreak,
+                        setShortBreak,
+                        setAnimateshortBreakUp
+                      )
+                    }
+                  >
+                    <EncreaseTime animateUp={animateshortBreakUp} />
+                  </div>
+                  <div
+                    onClick={() =>
+                      handleDecrease(
+                        shortBreak,
+                        setShortBreak,
+                        setAnimateshortBreakDown
+                      )
+                    }
+                  >
+                    <DecreaseTime animateDown={animateshortBreakDown} />
+                  </div>
                 </div>
-                <div
-                  onClick={() =>
-                    handleDecrease(
-                      longBreak,
-                      setLongtBreak,
-                      setAnimatelongBreakDown
-                    )
-                  }
-                >
-                  <DecreaseTime animateDown={animatelongBreakDown} />
+              </div>
+            </div>
+            {/* long break  */}
+            <div className="md:flex-col  flex justify-between items-center">
+              <p className="text-darkBlue opacity-[0.4]">long break </p>
+              <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
+                <p>{longBreak}</p>
+                <div className="flex flex-col gap-[9px]">
+                  <div
+                    onClick={() =>
+                      handleIncrease(
+                        longBreak,
+                        setLongtBreak,
+                        setAnimatelongBreakUp
+                      )
+                    }
+                  >
+                    <EncreaseTime animateUp={animatelongBreakUp} />
+                  </div>
+                  <div
+                    onClick={() =>
+                      handleDecrease(
+                        longBreak,
+                        setLongtBreak,
+                        setAnimatelongBreakDown
+                      )
+                    }
+                  >
+                    <DecreaseTime animateDown={animatelongBreakDown} />
+                  </div>
                 </div>
               </div>
             </div>
