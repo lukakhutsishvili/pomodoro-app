@@ -13,9 +13,11 @@ const Fonts = () => {
   const { font, setFont } = allContext();
 
   return (
-    <>
-      <h2 className="mt-6 text-[11px] leading-[4.23px] text-center">Font</h2>
-      <div className="mt-[18px] flex  justify-between px-[59px]">
+    <div className="md:flex items-center justify-between md:mt-[19px] ">
+      <h2 className="md:mt-0 md:text-[13px] tracking-[4.24px] mt-6 text-[11px] text-center">
+        Font
+      </h2>
+      <div className="md:mt-0 md:gap-[2px] md:px-0 mt-[18px] flex  justify-between px-[59px]">
         <div className="flex justify-center items-center w-[50px] h-[50px] hover:border-solid hover:border-[1px] hover:border-gray rounded-[50%] ">
           <div
             onClick={() => setFont("khumbrSans")}
@@ -49,7 +51,7 @@ const Fonts = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

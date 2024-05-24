@@ -79,8 +79,8 @@ const Timer = () => {
       setPause((prev) => ({ ...prev, [currentMode]: true }));
     } else if (startTimer === "Restart") {
       resetTimer(currentMode);
-      setStartTimer("Start"); // Change "start" to "Start"
-      setPause((prev) => ({ ...prev, [currentMode]: true })); // Set pause to false to start the timer again
+      setStartTimer("Start"); 
+      setPause((prev) => ({ ...prev, [currentMode]: true })); 
     }
   };
 

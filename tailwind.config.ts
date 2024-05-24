@@ -27,6 +27,9 @@ const config: Config = {
       boxShadow: {
         xl: " 50px 50px 100px 0 #121530, -50px -50px 100px 0 #272c5a",
       },
+      screens:{
+        xl: "1440px"
+      }
     },
   },
   plugins: [],

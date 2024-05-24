@@ -71,7 +71,7 @@ export default function Home() {
             : ""
         } `}
       >
-        <div className="md:mt-20 mt-8 flex justify-center">
+        <div className=" md:mt-20 mt-8 flex justify-center">
           <img src="/assets/logo.svg" alt="Logo" />
         </div>
         <Header />

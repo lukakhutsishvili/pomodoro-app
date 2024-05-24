@@ -60,7 +60,7 @@ const Modal: React.FC<{
       className={`
         ${
           modal
-            ? "md:px-[114px] md:pt-[267px] w-full min-h-full flex px-6  absolute pb-[72px]"
+            ? "md:px-[114px] md:pt-[267px] w-full  flex px-6  absolute pb-[72px]"
             : "hidden"
         } ${
         font === "khumbrSans"
@@ -72,9 +72,9 @@ const Modal: React.FC<{
           : ""
       } `}
     >
-      <div className="md:px-[39px] md:pt-[34px] bg-white mt-11 px-6 pt-6 w-full h-fit relative rounded-[15px] pb-[59px] ">
-        <div className="flex justify-between">
-          <h1 className="font-bold text-[20px]">Settings</h1>
+      <div className="md:mt-0 md:px-[39px] md:pt-[34px] bg-white mt-11 px-6 pt-6 w-full h-fit relative rounded-[15px] pb-[54px] ">
+        <div className="flex justify-between items-center">
+          <h1 className="md:text-[28px] font-bold text-[20px]">Settings</h1>
           <img
             onClick={() => setModal(false)}
             className="h-3 cursor-pointer"
@@ -83,15 +83,19 @@ const Modal: React.FC<{
           />
         </div>
         <div className="md:top-[93px] absolute h-[1px] w-full bg-gray top-[72px] left-0"></div>
-        <h2 className="md:text-left mt-[53px] text-center">Time (Minutes)</h2>
-        <div className=" mt-[18px] flex flex-col gap-2">
-          <div className="md:flex gap-5">
+        <h2 className="md:text-left mt-[53px] text-center tracking-[4.24px] text-[11px] md:text-[13px]">
+          Time (Minutes)
+        </h2>
+        <div className="md:mt-[26px] md:gap-0 mt-[18px] flex flex-col ">
+          <div className="md:justify-between md:flex-row flex flex-col md:gap-5 gap-2">
             {/* pomodoro */}
-            <div className=" md:flex-col flex justify-between items-center">
-              <p className="text-darkBlue opacity-[0.4]">Pomodoro</p>
-              <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
-                <p>{pomodoro}</p>
-                <div className="flex flex-col gap-[9px]">
+            <div className="md:items-start md:gap-[8px] md:flex-col flex justify-between items-center">
+              <p className="text-darkBlue text-[12px] opacity-[0.4]">
+                Pomodoro
+              </p>
+              <div className="md:h-12 flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
+                <p className="text-[14px]">{pomodoro}</p>
+                <div className=" flex flex-col gap-[9px]">
                   <div
                     onClick={() =>
                       handleIncrease(
@@ -118,10 +122,12 @@ const Modal: React.FC<{
               </div>
             </div>
             {/*  short Break */}
-            <div className="md:flex-col  flex justify-between items-center">
-              <p className="text-darkBlue opacity-[0.4]">short Break</p>
-              <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
-                <p>{shortBreak}</p>
+            <div className="md:items-start md:flex-col md:gap-[8px]  flex justify-between items-center">
+              <p className="text-darkBlue  text-[12px] opacity-[0.4]">
+                short Break
+              </p>
+              <div className=" md:h-12 flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
+                <p className="text-[14px]">{shortBreak}</p>
                 <div className="flex flex-col gap-[9px]">
                   <div
                     onClick={() =>
@@ -149,10 +155,12 @@ const Modal: React.FC<{
               </div>
             </div>
             {/* long break  */}
-            <div className="md:flex-col  flex justify-between items-center">
-              <p className="text-darkBlue opacity-[0.4]">long break </p>
-              <div className="flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
-                <p>{longBreak}</p>
+            <div className="md:items-start md:flex-col md:gap-[8px]  flex justify-between items-center">
+              <p className="text-darkBlue  text-[12px] opacity-[0.4]">
+                long break{" "}
+              </p>
+              <div className="md:h-12 flex justify-between items-center w-[140px] h-10 bg-timerBgColor px-4 rounded-[10px]">
+                <p className="text-[14px]">{longBreak}</p>
                 <div className="flex flex-col gap-[9px]">
                   <div
                     onClick={() =>
@@ -180,9 +188,9 @@ const Modal: React.FC<{
               </div>
             </div>
           </div>
-          <div className=" h-[1px] w-full bg-gray mt-[49px]"></div>
+          <div className="md:mt-6 h-[1px] w-full bg-gray mt-[49px]"></div>
           <Fonts />
-          <div className=" h-[1px] w-full bg-gray mt-6 "></div>
+          <div className="md:mt-6  h-[1px] w-full bg-gray mt-6 "></div>
           <Colors />
           <button
             onClick={() => {

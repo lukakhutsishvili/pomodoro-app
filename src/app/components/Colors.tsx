@@ -4,9 +4,11 @@ const Colors = () => {
   const { color, setColor } = allContext();
 
   return (
-    <>
-      <h2 className="text-[11px] mt-4 leading-[4.23px] text-center">Color</h2>
-      <div className="flex mt-[18px]  px-[59px] justify-between">
+    <div className="md:flex items-center justify-between md:mt-6 ">
+      <h2 className="md:mt-0 md:text-[13px] tracking-[4.24px] text-[11px] mt-4  text-center">
+        Color
+      </h2>
+      <div className="md:mt-0 md:gap-[2px] md:px-0 flex mt-[18px]  px-[59px] justify-between">
         <div className="flex justify-center items-center w-[50px] h-[50px] hover:border-solid hover:border-[1px] hover:border-gray rounded-[50%] ">
           <div
             onClick={() => {
@@ -38,7 +40,7 @@ const Colors = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

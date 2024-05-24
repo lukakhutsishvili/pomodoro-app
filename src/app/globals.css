@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
 .bg {
   background-image: linear-gradient(315deg, #2e325a, #0e112a);
 }
