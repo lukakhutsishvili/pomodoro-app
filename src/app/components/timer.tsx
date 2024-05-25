@@ -1,6 +1,6 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { allContext } from "../page";
+import { AllContext } from "../page";
 import { useEffect, useState } from "react";
 
 type TimerType = {
@@ -12,7 +12,7 @@ type TimerType = {
 type TimerMode = "pomodoro" | "shortBreak" | "longBreak";
 
 const Timer = () => {
-  const { allInfo, name } = allContext();
+  const { allInfo, name } = AllContext();
 
   const [startTimer, setStartTimer] = useState("Start");
 

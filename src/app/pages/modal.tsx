@@ -1,9 +1,8 @@
-import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
 import React, { useState } from "react";
 import { DecreaseTime, EncreaseTime } from "../images/svgs";
 import Fonts from "../components/Fonts";
 import Colors from "../components/Colors";
-import { allContext, kumbhSans, robotoSlab, spaceMono } from "../page";
+import { AllContext, kumbhSans, robotoSlab, spaceMono } from "../page";
 
 const Modal: React.FC<{
   modal: boolean;
@@ -33,7 +32,7 @@ const Modal: React.FC<{
   const [animatelongBreakUp, setAnimatelongBreakUp] = useState(false);
   const [animatelongBreakDown, setAnimatelongBreakDown] = useState(false);
 
-  const { font, setAllInfo, color } = allContext();
+  const { font, setAllInfo, color } = AllContext();
 
   const handleIncrease = (
     value: number,

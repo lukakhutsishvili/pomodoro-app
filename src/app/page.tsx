@@ -96,6 +96,6 @@ export default function Home() {
   );
 }
 
-export function allContext() {
+export function AllContext() {
   return useContext(context);
 }
