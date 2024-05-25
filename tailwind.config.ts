@@ -1,3 +1,4 @@
+import { Roboto } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -27,9 +28,14 @@ const config: Config = {
       boxShadow: {
         xl: " 50px 50px 100px 0 #121530, -50px -50px 100px 0 #272c5a",
       },
-      screens:{
-        xl: "1440px"
-      }
+      screens: {
+        xl: "1440px",
+      },
+      fontFamily: {
+        Roboto: ["var(--roboto)"],
+        kumbhSans: ["var(--kumbhSans)"],
+        spaceMono: ['var(--spaceMono)']
+      },
     },
   },
   plugins: [],

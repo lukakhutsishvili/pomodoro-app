@@ -2,7 +2,24 @@ import React, { useState } from "react";
 import { DecreaseTime, EncreaseTime } from "../images/svgs";
 import Fonts from "../components/Fonts";
 import Colors from "../components/Colors";
-import { AllContext, kumbhSans, robotoSlab, spaceMono } from "../page";
+import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
+import { AllContext } from "../page";
+
+const kumbhSans = Kumbh_Sans({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--kumbhSans",
+});
+const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--roboto",
+});
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--spaceMono",
+});
 
 const Modal: React.FC<{
   modal: boolean;
