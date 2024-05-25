@@ -9,7 +9,7 @@ export const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
 export const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
 export const spaceMono = Space_Mono({ subsets: ["latin"], weight: "700" });
 
-const context = createContext<contextType>({
+const context = createContext<ContextType>({
   font: "khumbrSans",
   setFont: () => {},
   color: "pomodoro",

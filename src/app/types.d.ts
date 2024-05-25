@@ -1,18 +1,18 @@
- interface AllInfoType {
+type AllInfoType = {
   pomodoro: number;
   shortBreak: number;
   longBreak: number;
   font: string;
   color: string;
-}
- interface contextType {
-  font: string;
-  setFont: React.Dispatch<string>;
-  color: string;
-  setColor: React.Dispatch<string>;
-  name: string;
-  setName: React.Dispatch<string>;
-  allInfo: AllInfoType;
-  setAllInfo: React.Dispatch<AllInfoType>;
+};
 
-}
+type ContextType = {
+  font: string;
+  setFont: Dispatch<SetStateAction<string>>;
+  color: string;
+  setColor: Dispatch<SetStateAction<string>>;
+  name: string;
+  setName: Dispatch<SetStateAction<string>>;
+  allInfo: AllInfoType;
+  setAllInfo: Dispatch<SetStateAction<AllInfoType>>;
+};
