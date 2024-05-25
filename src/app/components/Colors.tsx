@@ -1,7 +1,8 @@
-import { AllContext } from "../page";
+import { useContext } from "react";
+import { context } from "../page";
 
 const Colors = () => {
-  const { color, setColor } = AllContext();
+  const { color, setColor } = useContext(context);
 
   return (
     <div className="md:flex items-center justify-between md:mt-6 ">

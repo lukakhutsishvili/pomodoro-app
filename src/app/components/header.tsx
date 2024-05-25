@@ -1,9 +1,10 @@
 "use client";
 
-import { AllContext } from "../page";
+import { useContext } from "react";
+import {  context } from "../page";
 
 const Header = () => {
-  const { name, setName, allInfo } = AllContext();
+  const { name, setName, allInfo } = useContext(context);
   const bgColor =
     allInfo.color === "pomodoro"
       ? "#f87070"

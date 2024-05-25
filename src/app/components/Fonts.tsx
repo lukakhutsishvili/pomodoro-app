@@ -1,5 +1,6 @@
 import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
-import { AllContext } from "../page";
+import {  context } from "../page";
+import { useContext } from "react";
 
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
 const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
@@ -9,7 +10,7 @@ const spaceMono = Space_Mono({
 });
 
 const Fonts = () => {
-  const { font, setFont } = AllContext();
+  const { font, setFont } = useContext(context);
 
   return (
     <div className="md:flex items-center justify-between md:mt-[19px] ">

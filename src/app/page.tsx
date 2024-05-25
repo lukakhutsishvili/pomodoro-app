@@ -9,7 +9,7 @@ import Timer from "./components/timer";
  const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
  const spaceMono = Space_Mono({ subsets: ["latin"], weight: "700" });
 
-const context = createContext<contextType>({
+export const context = createContext<contextType>({
   font: "khumbrSans",
   setFont: () => {},
   color: "pomodoro",
@@ -92,6 +92,4 @@ export default function Home() {
   );
 }
 
-export function AllContext() {
-  return useContext(context);
-}
+
