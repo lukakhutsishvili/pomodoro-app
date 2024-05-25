@@ -5,11 +5,11 @@ import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
 import Modal from "./pages/modal";
 import Timer from "./components/timer";
 
- const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
- const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
- const spaceMono = Space_Mono({ subsets: ["latin"], weight: "700" });
+export const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
+export const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
+export const spaceMono = Space_Mono({ subsets: ["latin"], weight: "700" });
 
-export const context = createContext<contextType>({
+const context = createContext<contextType>({
   font: "khumbrSans",
   setFont: () => {},
   color: "pomodoro",
@@ -92,4 +92,6 @@ export default function Home() {
   );
 }
 
-
+export function AllContext() {
+  return useContext(context);
+}

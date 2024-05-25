@@ -1,13 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { DecreaseTime, EncreaseTime } from "../images/svgs";
 import Fonts from "../components/Fonts";
 import Colors from "../components/Colors";
-import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
-import { context } from "../page";
-
-const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
-const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
-const spaceMono = Space_Mono({ subsets: ["latin"], weight: "700" });
+import { AllContext, kumbhSans, robotoSlab, spaceMono } from "../page";
 
 const Modal: React.FC<{
   modal: boolean;
@@ -37,7 +32,7 @@ const Modal: React.FC<{
   const [animatelongBreakUp, setAnimatelongBreakUp] = useState(false);
   const [animatelongBreakDown, setAnimatelongBreakDown] = useState(false);
 
-  const { font, setAllInfo, color } = useContext(context);
+  const { font, setAllInfo, color } = AllContext();
 
   const handleIncrease = (
     value: number,
