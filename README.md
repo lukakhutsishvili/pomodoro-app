@@ -40,7 +40,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Live Site URL: [https://pomodoro-app-8lxa.vercel.app/]
+- Live Site URL: [click here](https://pomodoro-app-8lxa.vercel.app/)
 
 ## My process
 
@@ -53,4 +53,3 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 - [tailwindCss](https://tailwindcss.com/docs/installation/) - For styles
-
