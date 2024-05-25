@@ -3,7 +3,7 @@ import { DecreaseTime, EncreaseTime } from "../images/svgs";
 import Fonts from "../components/Fonts";
 import Colors from "../components/Colors";
 import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
-import { AllContext } from "../page";
+import { AllContext } from "../hooks/context";
 
 const kumbhSans = Kumbh_Sans({
   subsets: ["latin"],

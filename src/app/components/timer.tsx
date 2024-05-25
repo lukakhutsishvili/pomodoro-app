@@ -1,7 +1,7 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { AllContext } from "../page";
 import { useEffect, useState } from "react";
+import { AllContext } from "../hooks/context";
 
 type TimerType = {
   pomodoro: number;

@@ -1,6 +1,7 @@
 "use client";
 
-import { AllContext } from "../page";
+import { AllContext } from "../hooks/context";
+
 
 const Header = () => {
   const { name, setName, allInfo } = AllContext();

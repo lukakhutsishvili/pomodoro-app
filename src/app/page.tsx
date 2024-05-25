@@ -1,9 +1,10 @@
 "use client";
 import Header from "./components/header";
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
 import Modal from "./pages/modal";
 import Timer from "./components/timer";
+import { context } from "./hooks/context";
 
 const kumbhSans = Kumbh_Sans({
   subsets: ["latin"],
@@ -21,22 +22,7 @@ const spaceMono = Space_Mono({
   variable: "--spaceMono",
 });
 
-const context = createContext<ContextType>({
-  font: "khumbrSans",
-  setFont: () => {},
-  color: "pomodoro",
-  setColor: () => {},
-  name: "pomodoro",
-  setName: () => {},
-  allInfo: {
-    pomodoro: 25,
-    shortBreak: 5,
-    longBreak: 5,
-    font: "khumbrSans",
-    color: "pomodoro",
-  },
-  setAllInfo: () => {},
-});
+
 
 export default function Home() {
   const [name, setName] = useState("pomodoro");
@@ -104,6 +90,3 @@ export default function Home() {
   );
 }
 
-export function AllContext() {
-  return useContext(context);
-}

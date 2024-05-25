@@ -1,4 +1,4 @@
-import { AllContext } from "../page";
+import { AllContext } from "../hooks/context";
 
 const Colors = () => {
   const { color, setColor } = AllContext();

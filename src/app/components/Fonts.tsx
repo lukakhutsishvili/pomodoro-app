@@ -1,5 +1,5 @@
 import { Kumbh_Sans, Roboto_Slab, Space_Mono } from "next/font/google";
-import { AllContext } from "../page";
+import { AllContext } from "../hooks/context";
 
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
 const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
