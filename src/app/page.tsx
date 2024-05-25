@@ -7,10 +7,7 @@ import Timer from "./components/timer";
 
 export const kumbhSans = Kumbh_Sans({ subsets: ["latin"], weight: "700" });
 export const robotoSlab = Roboto_Slab({ subsets: ["latin"], weight: "400" });
-export const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: "700",
-});
+export const spaceMono = Space_Mono({ subsets: ["latin"], weight: "700" });
 
 const context = createContext<contextType>({
   font: "khumbrSans",
@@ -27,7 +24,6 @@ const context = createContext<contextType>({
     color: "pomodoro",
   },
   setAllInfo: () => {},
-
 });
 
 export default function Home() {
