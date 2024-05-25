@@ -60,7 +60,7 @@ const Modal: React.FC<{
       className={`
         ${
           modal
-            ? "md:px-[114px] md:pt-[267px] w-full  flex px-6  absolute pb-[72px]"
+            ? "xl:pt-[155px] xl:px-[450px] md:px-[114px] md:pt-[267px] w-full  flex px-6  absolute pb-[72px]"
             : "hidden"
         } ${
         font === "khumbrSans"

@@ -14,7 +14,7 @@ const Header = () => {
       : "";
 
   return (
-    <div className="md:mx-[198px] md:mt-[55px] mt-[45px] h-[63px] p-2 flex justify-between rounded-[31px] bg-darkBlue">
+    <div className="xl:mx-[533px] md:mx-[198px] md:mt-[55px] mt-[45px] h-[63px] p-2 flex justify-between rounded-[31px] bg-darkBlue">
       <div
         onClick={() => setName("pomodoro")}
         className={`md:px-[28px] px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${

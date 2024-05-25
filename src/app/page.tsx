@@ -61,7 +61,7 @@ export default function Home() {
       }}
     >
       <main
-        className={`md:pb-[112px] md:px-[0px] px-6 kumbh-font grid relative  ${
+        className={` md:pb-[112px] md:px-[0px] px-6 kumbh-font grid relative  ${
           allInfo.font === "khumbrSans"
             ? kumbhSans.className
             : allInfo.font === "robotoSlab"
@@ -71,7 +71,7 @@ export default function Home() {
             : ""
         } `}
       >
-        <div className=" md:mt-20 mt-8 flex justify-center">
+        <div className="xl:mt-12 md:mt-20 mt-8 flex justify-center">
           <img src="/assets/logo.svg" alt="Logo" />
         </div>
         <Header />
