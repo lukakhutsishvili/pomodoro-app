@@ -19,7 +19,9 @@ const Header = () => {
       <div
         onClick={() => setName("pomodoro")}
         className={`md:px-[28px] px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
-          name !== "pomodoro" ? "hover:text-[white] " : ""
+          name !== "pomodoro"
+            ? "hover:text-[white] text-[#d7e0ff] opacity-[0.4] hover:opacity-[1]"
+            : ""
         }`}
         style={{
           backgroundColor: name === "pomodoro" ? bgColor : "transparent",
@@ -30,7 +32,9 @@ const Header = () => {
       <div
         onClick={() => setName("short break")}
         className={`md:px-[28px] px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
-          name !== "short break" ? "hover:text-[white] " : ""
+          name !== "short break"
+            ? "hover:text-[white] text-[#d7e0ff] opacity-[0.4] hover:opacity-[1]"
+            : ""
         }`}
         style={{
           backgroundColor: name === "short break" ? bgColor : "transparent",
@@ -41,7 +45,9 @@ const Header = () => {
       <div
         onClick={() => setName("long break")}
         className={`md:px-[28px] px-[18px] flex items-center  rounded-[26px] cursor-pointer  ${
-          name !== "long break" ? "hover:text-[white] " : ""
+          name !== "long break"
+            ? "hover:text-[white] text-[#d7e0ff] opacity-[0.4] hover:opacity-[1]"
+            : ""
         }`}
         style={{
           backgroundColor: name === "long break" ? bgColor : "transparent",
